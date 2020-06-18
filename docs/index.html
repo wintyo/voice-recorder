@@ -121,12 +121,11 @@
 
       audioData = [];
       elRecordButton.innerText = '停止';
-      navigator.getUserMedia(
-        {
-          audio: true,
-          video: false,
-        },
-        (stream) => {
+      navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: false,
+      })
+        .then((stream) => {
           console.log(stream);
           audioContext = new AudioContext();
           console.log(audioContext.sampleRate);
@@ -144,11 +143,10 @@
             audioData.push(bufferData);
           };
           scriptProcessor.connect(audioContext.destination);
-        },
-        (error) => {
+        })
+        .catch((error) => {
           console.error(error);
-        }
-      )
+        });
     }
   </script>
 </body>
