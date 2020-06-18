@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start --server ./docs --watch ./docs/*"
+    "start": "browser-sync start --server ./docs --watch ./docs/* --no-ghost-mode",
+    "start:https": "browser-sync start --server ./docs --watch ./docs/* --https true --open external --no-ghost-mode"
   },
   "author": "",
   "license": "MIT",
