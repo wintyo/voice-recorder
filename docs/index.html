@@ -101,6 +101,7 @@
     };
   </script>
   <script>
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
     const BUFFER_SIZE = 1024;
     const elRecordButton = document.getElementById('recordButton');
 
